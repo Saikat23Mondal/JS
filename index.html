@@ -1,23 +1,63 @@
-<h2>Form</h2>
-<form>
-	<input type="text" id="name">
-	<input type="button" value="Submit" onclick='manageData()'>
-</form>
-<div id="msg"></div>
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css"
+</head>
 
-<h2>List</h2>
-<table border="1">
-	<thead>
-		<tr>
-			<td>S.No</td>
-			<td>Name</td>
-			<td>Action</td>
-		</tr>
-	<thead>
-	<tbody id="root">
-	
-	<tbody>
-</table>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="on" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="product">Item Name</label>
+                        <label class="validation-error hide" id="itemNameValidation">This field is required.</label>
+                        <input type="text" name="product" id="product">
+                    </div>
+                    <div>
+                    <label for="lang">Category</label>
+                    <select style="width: 100%;
+                    padding: 12px 24px;
+                    margin: 17px 0;
+                    display: inline-block;
+                    border: 1px solid rgb(165,161,161);
+                    border-radius: 4px;" name="languages" id="lang">
+                        <option value="Cpu">Processor</option>
+                        <option value="MotherBoard">MotherBoard</option>
+                        <option value="Ram">Ram</option>
+                        <option value="Gpu">Gpu</option>
+                        </select> 
+                    </div> 
+                    <div>
+                        <label for="perPrice">Price</label>
+                        <label class="validation-error hide" id="itemNameValidation">Price is required.</label>
+                        <input type="number" name="perPrice" id="perPrice">
+                    </div>
 
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
 
-<script src="index.js"></script>
+                <td >
+                    <table class="list" id="storeList">
+                        <thead>
+                            <tr>
+                                <th>Item Name</th>
+                                <th>Item Category</th>
+                                <th id="red">Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tdata">
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
